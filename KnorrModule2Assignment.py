@@ -3,6 +3,9 @@
 # Groundhog Day
 
 # BUDGET CALCULATOR
+
+
+# Remember to ask about error catching in python?? was to tired to implement/research
 class BudgetManager:
     def __init__(self):
         print('=== Budget Calculator ===')
