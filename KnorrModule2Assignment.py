@@ -33,3 +33,25 @@ def get_cost(cost_name):
     else:
         return 0.0
 
+# Create a function called print_report
+#   -This function should accept two parameters: monthly_income and monthly_costs
+#   -This function should output the monthly income and costs
+#   -This function should look if the budget is a surplus, breaks even, or is a deficit, and output a corresponding message
+#   -No return value is needed
+
+def print_report(monthly_income, monthly_costs):
+    print('-' * 30)
+    print(f'Monthly Income: ${monthly_income:,.2f}')
+    print(f'Monthly Costs: ${monthly_costs:,.2f}')
+    print('-' * 30)
+
+    difference = monthly_income - monthly_costs
+
+    if difference > 0:
+        print(f'You have a surplus of: ${difference:,.2f}')
+    elif difference < 0:
+        print(f'You are running a deficit of: ${abs(difference):,.2f}')
+    else:
+        print('You are breaking even!')
+
+
