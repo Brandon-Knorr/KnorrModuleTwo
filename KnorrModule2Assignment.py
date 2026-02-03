@@ -55,3 +55,14 @@ def print_report(monthly_income, monthly_costs):
         print('You are breaking even!')
 
 
+# create a variable to track the total cost
+total_costs = 0
+
+# call the get cost function 3 different times with 3 different arguments 
+total_costs += get_cost('rent')
+total_costs += get_cost('groceries')
+total_costs += get_cost('a car')
+
+# call the print report function with the 2 arguments 
+print_report(monthly_income, total_costs)
+
