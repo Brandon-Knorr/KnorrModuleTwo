@@ -3,7 +3,6 @@
 # Groundhog Day
 
 # BUDGET CALCULATOR
-
 class BudgetManager:
     def __init__(self):
         print('=== Budget Calculator ===')
@@ -35,20 +34,17 @@ class BudgetManager:
         else:
             print('You are breaking even!')
 
-# Running logic
+
+
 if __name__ == '__main__':
 
     manager = BudgetManager()
 
+    categories = ['rent', 'groceries', 'a car']
+    total_monthly_costs = 0
 
-    # create a variable to track the total cost
-    total_costs = 0
+    for item in categories:
+        total_monthly_costs += manager.get_cost(item)
 
-    # call the get cost function 3 different times with 3 different arguments 
-    total_costs += manager.get_cost('rent')
-    total_costs += manager.get_cost('groceries')
-    total_costs += manager.get_cost('a car')
-
-    # call the print report function with the 2 arguments 
-    manager.print_report(manager.monthly_income, total_costs)
+    manager.print_report(manager.monthly_income, total_monthly_costs)
 
