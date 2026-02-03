@@ -15,25 +15,45 @@
     #       sends value back to the function call
     #       once you hit a return statement the function ends
 
-def test_function():
-    print('this is a test')
-    return 123
+import tkinter as tk
+from tkinter import messagebox
 
-test_function()
-
-print(test_function())
 
 def get_area(length, width):
-    area = length * width
-    return area
-
+    return length * width
 
 def calculate_area_from_user():
-    length = float(input('What is the length? '))
-    width = float(input('What is the width? '))
-    area = get_area(length, width)
-    print(f'The area is {area}')
+        l = float(entry_length.get())
+        w = float(entry_width.get())
+        
+        area = get_area(l, w)
+        
+     
+        label_result.config(text=f"The area is: {area}", fg="green")
+        
 
-calculate_area_from_user()
+# --- GUI Setup ---
+
+root = tk.Tk()
+root.title("Simple Area Calc")
+
+
+tk.Label(root, text="Length:").pack(pady=2)
+entry_length = tk.Entry(root)
+entry_length.pack(pady=2)
+
+tk.Label(root, text="Width:").pack(pady=2)
+entry_width = tk.Entry(root)
+entry_width.pack(pady=2)
+
+
+btn_calculate = tk.Button(root, text="Calculate", command=calculate_area_from_user)
+btn_calculate.pack(pady=10)
+
+
+label_result = tk.Label(root, text="The area is: ", font=("Arial", 10, "bold"))
+label_result.pack(pady=5)
+
+root.mainloop()
 
 
